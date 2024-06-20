@@ -1,0 +1,1124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <!-- WRAPPER -->
+
+        <div class="wrapper">
+
+            <!-- CONTENT AREA -->
+
+            <div class="content-area">
+
+
+
+                <!-- PAGE -->
+
+                <section class="page-section no-padding slider">
+
+                    <div class="container full-width">
+
+                        <div class="main-slider">
+
+                            <div class="owl-carousel" id="main-slider">
+
+
+
+                                <!-- Slide 2 -->
+
+                                <div class="item slide2 ver2">
+
+                                    <div class="caption">
+
+                                        <div class="container">
+
+                                            <div class="div-table">
+
+                                                <div class="div-cell">
+
+                                                    <div class="caption-content">
+
+                                                        
+
+
+
+                                                        <h2 class="caption-subtitle">
+
+                                                            <span class="span-caption">We will help you find the right home</span>
+
+                                                            Find your dream property
+
+                                                        </h2>
+
+                                                        <p class="caption-text">
+
+                                                            We are here to make your goals come true. Welcoming you with our unique selection and high quality, we offer a different perspective in the real estate world. We are ready to develop together with you.
+
+                                                        </p>
+
+                                                        <p class="caption-text">
+
+                                                            <a class="btn btn-theme ripple-effect btn-theme-md" href="{% url 'property' %}"><i class="fa fa-list">&nbsp;</i> View all apartments</a>
+
+                                                        </p>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- /Slide 2 -->
+
+
+
+                                <!-- Slide 3 -->
+
+                                <div class="item slide3 ver3">
+
+                                    <div class="caption">
+
+                                        <div class="container">
+
+                                            <div class="div-table">
+
+                                                <div class="div-cell">
+
+                                                    <div class="caption-content">
+
+
+
+                                                        <h2 class="caption-title">For apartments</h2>
+
+                                                        <h3 class="caption-subtitle">The best deals</h3>
+
+                                                        <p class="caption-text">
+
+                                                            We are here to help you find the home of your dreams. We provide professional service for the most suitable property solutions for you.
+
+                                                        </p>
+
+                                                        <p class="caption-text">
+
+                                                            <a class="btn btn-theme ripple-effect btn-theme-md" href="{% url 'property' %}">See all apartments</a>
+
+                                                        </p>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- /Slide 3 -->
+
+
+
+                                <!-- Slide 4 -->
+
+                                <div class="item slide4 ver4">
+
+                                    <div class="caption">
+
+                                        <div class="container">
+
+                                            <div class="div-table">
+
+                                                <div class="div-cell">
+
+                                                    <div class="caption-content">
+
+                                                        <h2 class="caption-title">Own your own home</h2>
+
+                                                        <h3 class="caption-subtitle"><span>Ən yaxşı təklifləri sizlərə təqdim edirik</span></h3>
+
+                                                        <p class="caption-text">
+
+
+Making your home dreams come true is our job. We offer customized solutions for your specific real estate requirements.
+
+                                                        </p>
+
+                                                        <p class="caption-text">
+
+                                                            <a class="btn btn-theme ripple-effect btn-theme-md" href="{% url 'property' %}">See all apartments</a>
+
+                                                        </p>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- /Slide 4 -->
+
+
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+
+
+                <!-- PAGE -->
+
+                <section class="page-section">
+
+                    <div style="margin: auto 100px;">
+
+
+
+                        <h2 class="section-title wow fadeInUp" data-wow-offset="70" data-wow-delay="100ms">
+
+                            <span>THE LATEST PROPERTY OFFER FOR YOU</span>
+                            Campaigns
+
+                        </h2>
+
+
+
+                        <div class="tab-content wow fadeInUp" data-wow-offset="70" data-wow-delay="500ms">
+
+
+
+                            <!-- tab 2 -->
+
+                            <div class="tab-pane fade active in" id="tab-2">
+
+
+
+                                <div class="swiper swiper--offers-popular">
+
+                                    <div class="swiper-container">
+
+
+
+                                        <div class="swiper-wrapper">
+
+                                            <!-- Slides -->
+
+                                            {% if property %}
+                                            {% for post in property %}
+                                            <div class="swiper-slide" style="max-height: 350px;">
+
+                                                <div class="thumbnail no-border no-padding thumbnail-property-card">
+
+                                                    <div class="media">
+
+                                                        <span class="p-price" style="background: #cc3300;">{{ post.campaign_price }}</span>
+
+                                                        <a class="media-link" data-gal="prettyPhoto" href="{{ post.product.image.url }}">
+
+                                                            <img src="{{ post.product.image1.url }}" alt="" style="width: 300px;height:220px;"/>
+
+                                                            <span class="icon-view"><strong><i class="fa fa-arrows-alt"></i></strong></span></a>
+
+                                                    </div>
+
+                                                    <div class="caption text-center">
+
+                                                        <div class="media-left">
+
+                                            <div class="meta-date" style="padding:8px;background: #cc3300;color:white;">
+
+                                                <div class="day"><b>{{ post.final_date.day }}</b></div>
+
+                                                <div class="month"><b>
+                                                    {% if post.final_date.month == 1 %}
+                                                        YAN
+                                                    {% elif post.final_date.month == 2 %}
+                                                    FEV
+                                                    {% elif post.final_date.month == 3 %}
+                                                    MAR
+                                                    {% elif post.final_date.month == 4 %}
+                                                    APR
+                                                    {% elif post.final_date.month == 5 %}
+                                                    MAY
+                                                    {% elif post.final_date.month == 6 %}
+                                                    IYUN
+                                                    {% elif post.final_date.month == 7 %}
+                                                    IYUL
+                                                    {% elif post.final_date.month == 8 %}
+                                                    AVG
+                                                    {% elif post.final_date.month == 9 %}
+                                                    SEN
+                                                    {% elif post.final_date.month == 10 %}
+                                                    OKT
+                                                    {% elif post.final_date.month == 11 %}
+                                                    NOY
+                                                    {% else %}
+                                                    DEC
+                                                    {% endif %}
+
+                                                </b></div>
+
+                                            </div>
+
+                                        </div>
+                                                        <div class="media-body">
+                                                        <h4 class="caption-title"><a href="#">{{ post.product.product_name }}</a></h4>
+
+                                                        <div class="caption-text">{{ post.product.product_subtitle }}</div>
+
+                                                        <div class="buttons">
+
+                                                            <a class="btn btn-theme ripple-effect" href="{% url 'property-detail-view' post.product.id %}">view the property</a>
+
+                                                        </div>
+                                                        </div>
+                                                        <table class="table">
+
+                                                            <tr>
+
+                                                                <td><i class="fa fa-expand"></i> {{ post.product.square }} m2 </td>
+
+                                                                <td><i class="fa fa-bed"></i> {{ post.product.rooms }} otaq</td>
+
+
+
+                                                            </tr>
+
+                                                        </table>
+
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            {% endfor %}
+                                            {% else %}
+                                            <div style="width: 100%;padding: 16px;font-size: 72px;color: red;">
+                                                <p><i class="fa-solid fa-xmark"></i>No campaign available</p>
+                                            </div>
+                                            {% endif %}
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+                                    <!-- If we need navigation buttons -->
+
+                                    <div class="swiper-button-next"><i class="fa fa-angle-right"></i></div>
+
+                                    <div class="swiper-button-prev"><i class="fa fa-angle-left"></i></div>
+
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+
+
+
+
+
+                <!-- PAGE -->
+
+                <section class="page-section dark">
+
+                    <div class="container">
+
+
+
+                        <div class="row">
+
+                            <div class="col-md-6 wow fadeInLeft" data-wow-offset="200" data-wow-delay="100ms">
+
+                                <h2 class="section-title text-left">
+
+                                    <span>WHO ARE WE?</span>
+
+                                </h2>
+
+                                <p>"We are a leading real estate company. We are an experienced and expert team and provide high quality service to our clients. Our goal is to best understand our clients' real estate needs and provide them with appropriate solutions. We do our work with compassion and always put customer satisfaction first. Real Estate We have extensive knowledge and experience in the field and we closely follow the innovations in the field. We are here to provide the best experience in the field of property with our professional approach, reliability and accuracy. </p>
+
+                                <p class="btn-row">
+
+                                    <a href="{% url 'about' %}" class="btn btn-theme ripple-effect btn-theme-md"><i class="fa fa-chevron-right">&nbsp;</i>read more about us</a>
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+
+
+
+
+                <!-- PAGE -->
+
+                <section class="page-section">
+
+                    <div class="container">
+
+
+
+                        <h2 class="section-title wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
+
+                            <small>Your chosen real estate agents are there to guide you and at your service </small>
+
+                            <span>PROFESSIONAL GUIDES FROM REAL ESTATE AGENTS</span>
+
+                        </h2>
+
+
+
+                        <!-- Team row -->
+
+                        <div class="row">
+
+
+
+                            <!-- Team 1 -->
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
+
+                                <div class="thumbnail thumbnail-team no-border no-padding">
+
+                                    <div class="media">
+
+                                        <img src="{% static 'assets/img/preview/team/team-270x270x1.jpg' %}" alt=""/>
+
+                                    </div>
+
+                                    <div class="caption">
+
+                                        <h4 class="caption-title">Gunay Seyidova <small>Customer services manageri</small></h4>
+
+                                        <ul class="team-details">
+
+                                            <li><i class="fa fa-skype">&nbsp;</i> gnysydv555</li>
+
+                                            <li><i class="fa fa-phone">&nbsp;</i>  994515129552</li>
+
+                                            <li><i class="fa fa-envelope">&nbsp;</i> <a href="mailto:gunay_seyid555@gmail.com">gunay_seyid555@gmail.com</a></li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- /Team 1 -->
+
+
+
+                            <!-- Team 2 -->
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="200ms">
+
+                                <div class="thumbnail thumbnail-team no-border no-padding">
+
+                                    <div class="media">
+
+                                        <img src="{% static 'assets/img/preview/team/team-270x270x2.jpg' %}" alt=""/>
+
+                                    </div>
+
+                                    <div class="caption">
+
+                                        <h4 class="caption-title">Anar Jafarov <small>Group leader</small></h4>
+
+                                        <ul class="team-details">
+
+                                            <li><i class="fa fa-skype">&nbsp;</i> AnarGafar1590</li>
+
+                                            <li><i class="fa fa-phone">&nbsp;</i>  994509784564</li>
+
+                                            <li><i class="fa fa-envelope">&nbsp;</i> <a href="mailto:AnarGafar44@gmail.com">AnarGafar44@gmail.com</a></li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- /Team 2 -->
+
+
+
+                            <!-- Team 3 -->
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="300ms">
+
+                                <div class="thumbnail thumbnail-team no-border no-padding">
+
+                                    <div class="media">
+
+                                        <img src="{% static 'assets/img/preview/team/team-270x270x3.jpg' %}" alt=""/>
+
+                                    </div>
+
+                                    <div class="caption">
+
+                                        <h4 class="caption-title">Narmin Talibova <small>Technical support</small></h4>
+
+                                        <ul class="team-details">
+
+                                            <li><i class="fa fa-skype">&nbsp;</i> Narmin4564</li>
+
+                                            <li><i class="fa fa-phone">&nbsp;</i>  994515370629</li>
+
+                                            <li><i class="fa fa-envelope">&nbsp;</i> <a href="mailto:Narmin_00@gmail.com">Narmin_00@gmail.com</a></li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- /Team 3 -->
+
+
+
+                            <!-- Team 4 -->
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="400ms">
+
+                                <div class="thumbnail thumbnail-team no-border no-padding">
+
+                                    <div class="media">
+
+                                        <img src="{% static 'assets/img/preview/team/team-270x270x4.jpg' %}" alt=""/>
+
+                                    </div>
+
+                                    <div class="caption">
+
+                                        <h4 class="caption-title">Seymur Mustafayev <small>Lawyer</small></h4>
+
+                                        <ul class="team-details">
+
+                                            <li><i class="fa fa-skype">&nbsp;</i> Seymur0728</li>
+
+                                            <li><i class="fa fa-phone">&nbsp;</i>  994515560728</li>
+
+                                            <li><i class="fa fa-envelope">&nbsp;</i> <a href="mailto:Seymur.mm44@gmail.com">Semur.mm44@gmail.com</a></li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Team 4 -->
+
+
+
+                        </div>
+
+                        <!-- /Team row -->
+
+
+
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+
+
+                <!-- PAGE -->
+
+                <!-- /PAGE -->
+
+
+
+                
+
+
+
+                <!-- PAGE -->
+
+                <section class="page-section image">
+
+                    <div class="container">
+
+
+
+                        <div class="row">
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
+
+                                <div class="thumbnail thumbnail-counto no-border no-padding">
+
+                                    <div class="caption">
+
+                                        <div class="caption-icon"><i class="fa fa-heart"></i></div>
+
+                                        <div class="caption-number">10 thousand</div>
+
+                                        <h4 class="caption-title">Satisfied customers</h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="200ms">
+
+                                <div class="thumbnail thumbnail-counto no-border no-padding">
+
+                                    <div class="caption">
+
+                                        <div class="caption-icon"><i class="fa fa-thumbs-o-up"></i></div>
+
+                                        <div class="caption-number">50 thousand</div>
+
+                                        <h4 class="caption-title">Customers who like it</h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="300ms">
+
+                                <div class="thumbnail thumbnail-counto no-border no-padding">
+
+                                    <div class="caption">
+
+                                        <div class="caption-icon"><i class="fa fa-users"></i></div>
+
+                                        <div class="caption-number">12 thousand</div>
+
+                                        <h4 class="caption-title">members</h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="400ms">
+
+                                <div class="thumbnail thumbnail-counto no-border no-padding">
+
+                                    <div class="caption">
+
+                                        <div class="caption-icon"><i class="fa fa-comments-o"></i></div>
+
+                                        <div class="caption-number">1500</div>
+
+                                        <h4 class="caption-title">Comment</h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+
+
+                <!-- PAGE -->
+
+                <section class="page-section">
+
+                    <div class="container">
+
+
+
+                        <h2 class="section-title wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
+
+                            <small style="font-size: 26px;">Questions</small>
+
+                            <span>Frequently asked questions</span>
+
+                        </h2>
+
+
+
+                        <div class="row">
+
+                            <div class="col-md-6 wow fadeInLeft" data-wow-offset="200" data-wow-delay="200ms">
+
+                                <!-- FAQ -->
+
+                                <div class="panel-group accordion" id="accordion" role="tablist" aria-multiselectable="true">
+
+                                    <!-- faq1 -->
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" role="tab" id="heading1">
+
+                                            <h4 class="panel-title">
+
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+
+                                                    <span class="dot"></span> What other fees do I have to pay?
+
+                                                </a>
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+
+                                            <div class="panel-body">
+
+                                                Other fees you will pay on our site will be the costs and charges associated with the services you wish to perform. Examples of this include payments for the property you are purchasing, commission fees for real estate broker or estate agency services, service fees for completing assignments, or other valuable services. These fees may vary according to your requirements in the property area. Depending on the specific services and purchase process for which payments are made, we offer detailed information and support opportunities to customers on our website to provide accurate information. You can contact us through the contact details in our contact section to give you complete information about our valuable services and charges.
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /faq1 -->
+
+                                    <!-- faq2 -->
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" role="tab" id="heading2">
+
+                                            <h4 class="panel-title">
+
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+
+                                                    <span class="dot"></span> Where can I contact your agent?
+
+                                                </a>
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+
+                                            <div class="panel-body">
+
+                                                Phone: You can call our customer care number to reach us by phone. You can speak live with our agents and get answers to your questions by providing us with your contact information over the phone.
+
+Email: You can also contact us via email. You can share our email address with you and send us an email to apply and get answers to your questions. Our agents will try to answer you as quickly and accurately as possible.
+
+
+Social media: You can also reach us on social media platforms. You can send us your questions and requests by sending a message from our official accounts.
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /faq2 -->
+
+                                    <!-- faq3 -->
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" role="tab" id="heading3">
+
+                                            <h4 class="panel-title">
+
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+
+                                                    <span class="dot"></span> When will I get the property?
+
+                                                </a>
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+
+                                            <div class="panel-body">
+
+                                                The time to acquire the property will depend on several factors of the process. These can be factors such as the type of property, location, agreements between the seller and the buyer, credit processes of banks, and so on. Each property purchase process can be different and therefore it is difficult to set a specific time frame.
+
+Your estate agent can contact you with more detailed information about the stages and timeframes in the property acquisition process. Your agent will guide you through the process of collecting the necessary documents, notarization, banking and other procedures and guide you through the process of acquiring the property.
+
+The foreclosure process can generally take several weeks or months. In this process, we will carefully monitor all the steps necessary to acquire your property and keep you informed at every stage.
+
+However, information may vary depending on your specific property buying experience and local laws. Your agent will provide you with complete information and guide you through the process of acquiring your property, showing you the best measures to get the best.
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /faq3 -->
+
+                                </div>
+
+                                <!-- /FAQ -->
+
+                            </div>
+
+                            <div class="col-md-6 wow fadeInRight" data-wow-offset="200" data-wow-delay="200ms">
+
+                                <!-- FAQ -->
+
+                                <div class="panel-group accordion" id="accordion2" role="tablist" aria-multiselectable="true">
+
+                                    <!-- faq1 -->
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" role="tab" id="heading21">
+
+                                            <h4 class="panel-title">
+
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse21" aria-expanded="false" aria-controls="collapse21">
+
+                                                    <span class="dot"></span> What are the additional costs of the property?
+
+                                                </a>
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading21">
+
+                                            <div class="panel-body">
+
+                                                Property charges refer to other charges that come with the property you buy or rent. Along with a working property, the following additional costs are the most common:
+
+Collection and property taxes: When you own a property, it is your responsibility to pay the taxes and fees imposed by the local courts. This varies depending on the value, area and location of the property.
+
+Heat, water, electricity and other utilities: During the period you use the property, you must also arrange the utility bills that customers are billed for basic services. This may include services such as heating system, water, electricity, internet, telephone and others.
+
+Repair and maintenance costs: You may incur costs for corrective repairs and maintenance to maintain the quality and value of your property. This can be painting, building maintenance, yard maintenance, water extraction and other maintenance and renovation work.
+
+Property Insurance: You may want to insure your property for your safety. This may involve paying for an insurance policy which may vary depending on the value of the property and the risks involved.
+
+Management and property agency services: When you want to rent out your property, you need to contact property agencies or management companies and pay them for their services. This may include services such as property management, rental agreement drafting, tenant selection, property advertising, and more.
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /faq1 -->
+
+                                    <!-- faq2 -->
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" role="tab" id="heading22">
+
+                                            <h4 class="panel-title">
+
+                                                <a data-toggle="collapse" data-parent="#accordion2" href="#collapse22" aria-expanded="true" aria-controls="collapse22">
+
+                                                    <span class="dot"></span> How does the property sales process work?
+
+                                                </a>
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div id="collapse22" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading22">
+
+                                            <div class="panel-body">
+
+                                            Property valuation: As a first step, the value of the property must be determined. The valuation process is based on factors related to the property's characteristics, location, title deeds and the surrounding property market.
+
+Advertising and marketing: An effective advertising strategy should be set up to showcase the property for sale. This is done by disseminating property information on websites, social media platforms, kitchens, brochures and more.
+
+Meetings and discussions: Meetings are arranged with potential buyers and they are presented with the details, features and terms of sale of the property. Buyers' questions are answered and price is negotiated.
+
+Agreement and documentation: Once an agreement is reached with the buyer, a written agreement is entered into that covers the terms for the sale of the property. In this agreement, the sale price of the property, terms of payment, rights and responsibilities of the buyer and the seller should be specified in sufficient detail.
+
+Legal procedures and registration: Legal procedures must be followed to confirm the sale agreement. This may be related to notarization, payment of property debts with organizations, execution of tasks and application of changes. This process ensures that the sale is legally complete.
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /faq2 -->
+
+                                    <!-- faq3 -->
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" role="tab" id="heading23">
+
+                                            <h4 class="panel-title">
+
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse23" aria-expanded="false" aria-controls="collapse23">
+
+                                                    <span class="dot"></span> Mortgage information and what to look out for
+
+                                                </a>
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div id="collapse23" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading23">
+
+                                            <div class="panel-body">
+
+                                            Mortgage refers to the process of obtaining a housing loan for the purchase of a property. Mortgages are usually long-term and large loans that give the buyer the right to own the part of the property (for example, a house, apartment) that the owner owns. A working mortgage process consists of the following stages:
+
+Credit eligibility check: The first step is to check the loan application by the bank. The bank will evaluate the buyer's financial strength and eligibility for the loan, check the credit score, income and debts.
+
+Discussion of mortgage conditions: The mortgage conditions provided by the bank are discussed. These conditions include factors such as loan interest, repayment period, advance amount, property price and others.
+
+Property valuation: The bank determines the price of the property and determines the amount of the mortgage loan based on it. In this process, the value of the property is evaluated based on market value and development prospects.
+
+Liaison with Institutions: Liaises with property registry and government institutions to verify ownership documents and other legal procedures to fulfill the mortgage request.
+
+Closing the deal and loan approval: The mortgage agreement is signed by the bank and the buyer and the legal procedures for loan approval are followed. In this process, the buyer accepts payment arrangements and other mortgage terms.
+
+The mortgage process can be complex and detailed. Before starting the mortgage process, buyers need to gather accurate information and consider the following points:
+
+Loan interest: The interest rate offered by the bank and its long-term effect.
+Repayment terms: Detailed information about the loan repayment period, monthly payments and penalty interest.
+Advance Amount: The minimum advance amount required to issue a mortgage loan.
+Determining the property
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /faq3 -->
+
+                                </div>
+
+                                <!-- /FAQ -->
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+
+
+                <!-- PAGE -->
+
+
+
+                <!-- /PAGE -->
+                
+                <!-- PAGE -->
+
+                <section class="page-section">
+
+                    <div class="container">
+
+
+
+                        <h2 class="section-title wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
+
+                            <small>Latest property news on our blog</small>
+
+                            <span>RECENT BLOG POSTS</span>
+
+                        </h2>
+
+
+
+                        <div class="row">
+                            {% if blog %}
+                            {% for post in blog %}
+                            <div class="col-md-6 wow fadeInLeft" data-wow-offset="200" data-wow-delay="200ms">
+
+                                <div class="recent-post alt">
+
+                                    <div class="media">
+
+                                        <a class="media-link" href="#">
+
+                                            <img class="media-object" src="{{ post.post_image1.url }}" alt="" style="width: 550px; height:470px;">
+
+                                            <i class="fa fa-plus"></i>
+
+                                        </a>
+
+                                        <div class="media-left">
+
+                                            <div class="meta-date">
+
+                                                <div class="day">{{ post.post_date.day }}</div>
+
+                                                <div class="month">
+                                                    {% if post.post_date.month == 1 %}
+                                                        YAN
+                                                    {% elif post.post_date.month == 2 %}
+                                                    FEV
+                                                    {% elif post.post_date.month == 3 %}
+                                                    MAR
+                                                    {% elif post.post_date.month == 4 %}
+                                                    APR
+                                                    {% elif post.post_date.month == 5 %}
+                                                    MAY
+                                                    {% elif post.post_date.month == 6 %}
+                                                    IYUN
+                                                    {% elif post.post_date.month == 7 %}
+                                                    IYUL
+                                                    {% elif post.post_date.month == 8 %}
+                                                    AVG
+                                                    {% elif post.post_date.month == 9 %}
+                                                    SEN
+                                                    {% elif post.post_date.month == 10 %}
+                                                    OKT
+                                                    {% elif post.post_date.month == 11 %}
+                                                    NOY
+                                                    {% else %}
+                                                    DEC
+                                                    {% endif %}
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="media-body">
+
+
+
+                                            <h4 class="media-heading"><a href="#">{{ post.post_title }}</a></h4>
+
+                                            <div class="media-excerpt">{{ post.post_article }}</div>
+
+                                            <br />
+
+                                            <a href="{% url 'detail-view' post.id %}" class="btn btn-theme"><i class="fa fa-chevron-right">&nbsp;</i> More</a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+
+
+                        </div>
+
+
+
+                        <div class="text-center margin-top wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
+
+                            <a href="{% url 'blog' %}" class="btn btn-theme ripple-effect btn-theme-light btn-more-posts">See all blog posts</a>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+            </div>
+
+            <!-- /CONTENT AREA -->
+
+
+
+            {% include "./footer-1.html" %}
+
+
+
+            <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
+
+
+
+        </div>
+
+        <!-- /WRAPPER -->
+
+
+{% endblock content %}
+
+

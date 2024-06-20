@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <!-- WRAPPER -->
+        <div class="wrapper">
+
+            
+
+            <!-- CONTENT AREA -->
+            <div class="content-area">
+
+                <!-- BREADCRUMBS -->
+                <section class="page-section breadcrumbs text-center">
+                    <div class="container">
+                        <div class="page-header">
+                            <h1>Sign in</h1>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home Page</a></li>
+                            <li><a href="/property/">apartments</a></li>
+                            <li class="active">Sign in</li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- /BREADCRUMBS -->
+
+                <!-- PAGE -->
+                <section class="page-section color">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3 class="block-title"><span>Login</span></h3>
+                                <form method="POST" class="form-login">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-12 hello-text-wrap">
+                                            <span class="hello-text text-thin">Hello, Welcome to the Login </span>
+                                        </div>
+                                        <div class="col-md-12 col-lg-6"  style="display: none;">
+                                            <a class="btn btn-theme btn-block btn-icon-left facebook" href="#"><i class="fa fa-facebook"></i>Sign in with Facebook</a>
+                                        </div>
+                                        <div class="col-md-12 col-lg-6" style="display: none;">
+                                            <a class="btn btn-theme btn-block btn-icon-left twitter" href="#"><i class="fa fa-twitter"></i>Sign in with Twitter</a>
+                                        </div>
+                                        <div class="col-md-12">
+                                            {{ form.username }}
+                                        </div>
+                                        <div class="col-md-12">
+                                            {{ form.password }}
+                                        </div>
+                                        <div class="col-md-12 col-lg-6">
+                                            
+                                        </div>
+                                        <div class="col-md-12 col-lg-6 text-right-lg">
+                                            <a class="forgot-password" href="{% url 'password_reset' %}">Forgot your password?</a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="submit" class="btn btn-theme btn-block btn-theme-dark" href="#">Sign in</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-6">
+                                <h3 class="block-title"><span>Create a New Account</span></h3>
+                                <form action="#" class="create-account">
+                                    <div class="row">
+                                        <div class="col-md-12 hello-text-wrap">
+                                            <span class="hello-text text-thin"></span>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h3 class="block-title">Register today and take advantage of the campaigns</h3>
+                                            <ul class="list-check">
+                                                <li>Virtual housing contract</li>
+                                                <li>Check out the latest deals</li>
+                                                <li>Sign up to receive exclusive news and exclusive sales</li>
+                                                <li>Quick buy properties</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a class="btn btn-block btn-theme btn-theme-dark btn-create" href="{% url 'sign-in' %}">Create a New Account</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- /PAGE -->
+
+            </div>
+            <!-- /CONTENT AREA -->
+
+            
+
+            <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
+
+        </div>
+        <!-- /WRAPPER -->
+{% endblock content %}
