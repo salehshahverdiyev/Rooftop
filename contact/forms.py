@@ -9,12 +9,12 @@ class="form-control placeholder"
 
 class ContactForm(forms.Form):
     name = CharField(label='Name', widget=TextInput(attrs={
-        'placeholder' : 'Ad',
+        'placeholder' : 'Name',
         'data-toggle' : 'tooltip',
         'class'       : 'form-control placeholder',
         'title'       : 'Name is required',
         'type'        : 'text',
-        'name'        : 'Ad',
+        'name'        : 'Name',
         'id'          : 'name',
     }))
     email = EmailField(label='Email', widget=EmailInput(attrs={
@@ -27,7 +27,7 @@ class ContactForm(forms.Form):
         'id'          : 'email',
     }))
     subject = CharField(label='Subject', widget=TextInput(attrs={
-        'placeholder' : 'Mövzu',
+        'placeholder' : 'Topic',
         'data-toggle' : 'tooltip',
         'class'       : 'form-control placeholder',
         'title'       : 'Subject is required',
@@ -36,7 +36,7 @@ class ContactForm(forms.Form):
         'id'          : 'subject',
     }))
     message = CharField(label='Message', widget=Textarea(attrs={
-        'placeholder' : 'Mesaj',
+        'placeholder' : 'Message',
         'data-toggle' : 'tooltip',
         'class'       : 'form-control placeholder',
         'title'       : 'Message is required',
