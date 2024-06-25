@@ -9,19 +9,19 @@ from .models import Accounts
 class RegisterForm(UserCreationForm):
     
     first_name = CharField(label='Ad', widget=TextInput(attrs={
-        'placeholder' : 'Ad',
+        'placeholder' : 'Name',
         'class'       : 'form-control',
         'type'        : 'text',
         'id'          : 'last_name',
     }))
     last_name = CharField(label='Soyad', widget=TextInput(attrs={
-        'placeholder' : 'Soyad',
+        'placeholder' : 'Surname',
         'class'       : 'form-control',
         'type'        : 'text',
         'id'          : 'last_name'
     }))
     username = CharField(label='İstifadəçi adı', widget=TextInput(attrs={
-        'placeholder' : 'İstifadəçi adı',
+        'placeholder' : 'Username',
         'class'      : 'form-control', 
         'type'       : 'text',
         'id'         : 'username',
@@ -33,13 +33,13 @@ class RegisterForm(UserCreationForm):
         'id'          : 'email',
     }))
     password1 = CharField(label='Şifrə', widget=PasswordInput(attrs={
-        'placeholder' : 'Şifrə',
+        'placeholder' : 'Password',
         'class'       : 'form-control',
         'type'        : 'password',
         'id'          : 'password1',
     }))
     password2 = CharField(label='Şifrə təkrar', widget=PasswordInput(attrs={
-        'placeholder' : 'Şifrə təkrar',
+        'placeholder' : 'Password again',
         'class'       : 'form-control',
         'type'        : 'password',
         'id'          : 'password2',
@@ -51,14 +51,14 @@ class RegisterForm(UserCreationForm):
 
 class LoginForm(AuthenticationForm):
     username = UsernameField(label='İstifadəçi adı', widget=EmailInput(attrs={
-        'placeholder' : 'İstifadəçi adı',
+        'placeholder' : 'Username',
         'class'       : 'form-control',
         'type'        : 'text',
         'id'          : 'email',
     }))
 
     password = CharField(label='Şifrə', widget=PasswordInput(attrs={
-        'placeholder' : 'Şifrə',
+        'placeholder' : 'Password',
         'class'       : 'form-control',
         'type'        : 'password',
         'id'          : 'password',
