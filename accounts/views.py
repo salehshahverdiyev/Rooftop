@@ -34,6 +34,7 @@ def login_funtion(request):
     else:
         form = LoginForm()
     
+    print(error)
     data = {
         'form' : form,
     }
